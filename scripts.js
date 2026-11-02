@@ -57,12 +57,7 @@ const EXPERIENCE = [
     tags: ['Angular', 'REST API', 'Spring Boot', 'Mobile']
   },
   /* NG hosting platform: send me the link & details and I'll fill this in.
-  {
-    when: '2026', current: true,
-    role: 'Developer', org: 'NG', orgUrl: 'https://…',
-    desc: '…',
-    tags: ['Hosting', 'Cloud']
-  },
+  { when: '2026', current: true, role: 'Developer', org: 'NG', orgUrl: 'https://…', desc: '…', tags: ['Hosting', 'Cloud'] },
   */
   {
     when: '2026',
@@ -71,21 +66,27 @@ const EXPERIENCE = [
     tags: ['Angular', 'UI/UX', 'Branding', 'i18n']
   },
   {
-    when: '2025',
-    role: 'Flutter Developer', org: 'eCash Delivery · Guinea',
-    desc: 'Built the front end of a delivery app in Flutter and integrated the REST APIs for real-time order tracking, order management and secure user flows.',
+    when: 'Apr 2025 — Sep 2026',
+    role: 'Java Software Developer', org: 'CodeAlpha · Remote',
+    desc: 'Built Java applications remotely as part of CodeAlpha’s developer programme, covering object-oriented design, data handling and clean, maintainable code.',
+    tags: ['Java', 'OOP', 'Git']
+  },
+  {
+    when: 'Dec 2022 — Present', current: true,
+    role: 'Mobile Developer', org: 'E-Cash · Guinea',
+    desc: 'Build the Flutter front end of E-Cash’s delivery app and integrate its REST APIs for real-time order tracking, order management and secure user flows.',
     tags: ['Flutter', 'Dart', 'REST API']
   },
   {
-    when: '2025',
-    role: 'Backend Developer', org: 'Gambian Go',
-    desc: 'Co-developed a multi-role e-commerce API (buyers, sellers, drivers, admins) with JWT auth and role-based permissions.',
-    tags: ['Laravel', 'PostgreSQL', 'JWT']
+    when: 'Mar 2023 — Aug 2024',
+    role: 'Computer Programmer (Apprenticeship)', org: 'Orange · Guinea',
+    desc: 'Work-study programme at Orange: software development on-site, plus Orange Digital Center training in mobile development (Kotlin).',
+    tags: ['Kotlin', 'Mobile', 'Programming']
   },
   {
-    when: '2024 — 2025',
-    role: 'Web Developer', org: 'Service Informatique de Guinée', orgUrl: 'https://www.sinformatiqueguinee.com/',
-    desc: 'Built the company’s website presenting its services and vision, with a contact pipeline for partners and clients.',
+    when: 'Mar 2022 — Present', current: true,
+    role: 'Developer (Seasonal)', org: 'Service Informatique de Guinée', orgUrl: 'https://www.sinformatiqueguinee.com/',
+    desc: 'Built and maintain the company’s website presenting its services and vision, with a contact pipeline for partners and clients.',
     tags: ['PHP', 'JavaScript', 'Bootstrap']
   }
 ];

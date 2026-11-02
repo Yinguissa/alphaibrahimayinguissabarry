@@ -426,3 +426,6 @@ main, .footer, .header { position: relative; z-index: 2; }
   .modal-content { padding: 1.6rem 1.3rem 2rem; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
+
+.case-note { font-size: .82rem; color: var(--text-3); margin: -0.8rem 0 1.4rem; display: flex; gap: .5rem; align-items: center; }
+.case-note i { color: var(--ok); }
