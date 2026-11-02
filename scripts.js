@@ -48,6 +48,27 @@ const CASES = [
     links: [{ label: 'Visit movely.africa', href: 'https://movely.africa/', primary: true }]
   },
   {
+    name: 'Fanka Labs',
+    url: 'https://fankalabs.github.io/',
+    domain: 'fankalabs.github.io',
+    status: [{ label: 'Startup · Co-founder', type: 'live' }, { label: 'Karan in development', type: 'wip' }, { label: 'Montréal, Canada' }],
+    tagline: '“Fanka” means strength. A tech startup I co-founded with two partners to build simple, accessible digital tools designed for local realities. Our first product is Karan, an education platform.',
+    role: 'Co-founder & Scrum Master (Sep 2026 – now)',
+    platform: 'Karan: education platform (private, in development)',
+    points: [
+      'Co-founded Fanka Labs with <strong>Gaoussou Cissé (CEO)</strong> and <strong>Ahmed Tidiane Diané (CTO)</strong>, one shared drive to build tech that matters.',
+      'Serve as <strong>Scrum Master</strong>: running the team’s agile process, sprints and backlog as we build our first product.',
+      'Building <strong>Karan</strong>, an education platform that supports learners with content and tools designed to help them succeed.',
+      'Focused on the company mission: <strong>education, innovation and lasting impact</strong> for our communities.'
+    ],
+    stack: ['Scrum', 'Agile delivery', 'Product', 'EdTech', 'Startup'],
+    image: 'images/fanka-hero.jpg',
+    mobile: 'images/fanka-mobile.jpg',
+    bg: 'linear-gradient(135deg, #1d3a8a 0%, #0b1433 85%)',
+    links: [{ label: 'Visit fankalabs.github.io', href: 'https://fankalabs.github.io/', primary: true }],
+    note: 'Karan is private while in development. More details at launch.'
+  },
+  {
     name: 'Dab City Basket Teams',
     url: 'https://dabcitybasketteams.org/',
     domain: 'dabcitybasketteams.org',
@@ -82,6 +103,12 @@ const EXPERIENCE = [
     role: 'Full Stack Developer', org: 'AWMLVV Binary Technology · Movely', orgUrl: 'https://movely.africa/',
     desc: 'Build the Spring Boot API and Angular app behind a vehicle rental and sales marketplace: KYC, role-based back office, MySQL data model and Docker deployment.',
     tags: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'Docker']
+  },
+  {
+    when: 'Sep 2026 — Present', current: true,
+    role: 'Co-founder & Scrum Master', org: 'Fanka Labs · Montréal (remote)', orgUrl: 'https://fankalabs.github.io/',
+    desc: 'Co-founded a Canadian tech startup building useful digital tools for local realities. As Scrum Master I run our agile process while we build Karan, our education platform (in development).',
+    tags: ['Scrum', 'Agile', 'Startup', 'EdTech']
   },
   {
     when: '2026',
