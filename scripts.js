@@ -7,20 +7,41 @@
 /* ---------- 1. FEATURED CASE STUDIES ---------- */
 const CASES = [
   {
+    name: 'BioPro: Biometric Attendance & HR',
+    url: 'https://cgc-sau-drh-gn.com/',
+    domain: 'cgc-sau-drh-gn.com',
+    status: [{ label: 'Live in production', type: 'live' }, { label: 'Conseil Guinéen des Chargeurs' }, { label: 'Jul 2026 – now' }],
+    tagline: 'A production HR platform that pulls attendance from biometric terminals into one place: enrolment, device management, attendance records and statistics for a national organisation in Guinea.',
+    role: 'Backend & Full Stack Developer',
+    platform: 'Laravel web app + REST API on an Ubuntu VPS',
+    points: [
+      'Built <strong>attendance synchronisation</strong> that retrieves records from each <strong>ZKTeco biometric terminal</strong> by device ID (BioPro SA40 units 4370 and 4371) and consolidates them into one MySQL database.',
+      'Delivered <strong>enrolment and device management</strong>: enrolled vs. pending staff, and which employees are registered on which device.',
+      'Built REST endpoints and the attendance interface with <strong>filtering, pagination, CSV export</strong> and a <strong>statistics dashboard</strong>.',
+      'Own <strong>production operations</strong> on Ubuntu with Nginx and PHP-FPM: deployments, schema changes, data integrity and query-level debugging.'
+    ],
+    stack: ['Laravel', 'PHP', 'MySQL', 'REST API', 'ZKTeco SDK', 'Ubuntu', 'Nginx', 'PHP-FPM'],
+    image: 'images/biopro-hero.jpg',
+    mobile: 'images/biopro-mobile.jpg',
+    bg: 'linear-gradient(135deg, #6b6fe0 0%, #1b1640 85%)',
+    links: [{ label: 'Visit the platform', href: 'https://cgc-sau-drh-gn.com/', primary: true }],
+    note: 'Internal system: the public page is the secure login, employee data stays private.'
+  },
+  {
     name: 'Movely',
     url: 'https://movely.africa/',
     domain: 'movely.africa',
-    status: [{ label: 'Live', type: 'live' }, { label: 'Mobile app in progress', type: 'wip' }, { label: 'Guinea · Conakry' }],
-    tagline: 'A premium vehicle rental & sales marketplace for Guinea. Find the right car, sign a digital contract and get the keys, all online.',
-    role: 'Full-Stack Developer',
-    platform: 'Web app + REST API, mobile app in development',
+    status: [{ label: 'Live', type: 'live' }, { label: 'Mobile app in progress', type: 'wip' }, { label: 'AWMLVV Binary Technology' }],
+    tagline: 'A vehicle rental and sales marketplace for Guinea, serving clients, vehicle owners, drivers and administrators. Find a verified car, sign a digital contract and get the keys.',
+    role: 'Full Stack Developer (Mar 2026 – now)',
+    platform: 'Spring Boot REST API + Angular web app, Dockerised on a VPS',
     points: [
-      'Built a <strong>two-sided marketplace</strong>: customers rent vehicles, and owners can list their own cars for rent.',
-      '<strong>Verified onboarding</strong> with identity checks, plus <strong>digital rental contracts</strong> signed in-app.',
-      'Live catalogue with category, fuel, transmission, seats, A/C, <strong>GNF pricing with promotions</strong>, and service zones (Conakry or nationwide).',
-      'Versioned, paginated <strong>REST API (v1)</strong> powering vehicles, reviews moderation, ads, site settings and visitor analytics.'
+      'Build <strong>Java / Spring Boot REST APIs</strong> and <strong>Angular</strong> interfaces for rental and sales workflows: vehicle publishing, client, owner and driver management.',
+      'Implemented <strong>KYC and document verification</strong>, plus <strong>role-based access control</strong> for a back office with four admin profiles (Super Admin, Support, Compliance, Reader).',
+      'Model and maintain the <strong>MySQL</strong> schema for users, vehicles, roles and rentals, behind a versioned, paginated public API (v1).',
+      '<strong>Containerise services with Docker</strong> and deploy to a VPS. Researched mobile-money payment options for the Guinean market.'
     ],
-    stack: ['Angular 19', 'TypeScript', 'REST API', 'Spring Boot', 'SQL', 'Responsive UI'],
+    stack: ['Java', 'Spring Boot', 'Angular 19', 'TypeScript', 'MySQL', 'Docker', 'REST API'],
     image: 'images/movely-hero.jpg',
     mobile: 'images/movely-mobile.jpg',
     bg: 'linear-gradient(135deg, #2741e6 0%, #0a0f1e 85%)',
@@ -51,14 +72,17 @@ const CASES = [
 /* ---------- 2. EXPERIENCE (edit dates/roles here) ---------- */
 const EXPERIENCE = [
   {
-    when: '2026 — Present', current: true,
-    role: 'Full-Stack Developer', org: 'Movely', orgUrl: 'https://movely.africa/',
-    desc: 'Building a vehicle rental and sales platform for Guinea: the Angular web app, the REST API behind it, and now the mobile app.',
-    tags: ['Angular', 'REST API', 'Spring Boot', 'Mobile']
+    when: 'Jul 2026 — Present', current: true,
+    role: 'Backend & Full Stack Developer', org: 'BioPro · Conseil Guinéen des Chargeurs', orgUrl: 'https://cgc-sau-drh-gn.com/',
+    desc: 'Develop and run a production biometric attendance and HR system: ZKTeco device sync, enrolment, attendance records, CSV export and statistics, deployed on Ubuntu with Nginx and PHP-FPM.',
+    tags: ['Laravel', 'PHP', 'MySQL', 'Linux', 'Nginx']
   },
-  /* NG hosting platform: send me the link & details and I'll fill this in.
-  { when: '2026', current: true, role: 'Developer', org: 'NG', orgUrl: 'https://…', desc: '…', tags: ['Hosting', 'Cloud'] },
-  */
+  {
+    when: 'Mar 2026 — Present', current: true,
+    role: 'Full Stack Developer', org: 'AWMLVV Binary Technology · Movely', orgUrl: 'https://movely.africa/',
+    desc: 'Build the Spring Boot API and Angular app behind a vehicle rental and sales marketplace: KYC, role-based back office, MySQL data model and Docker deployment.',
+    tags: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'Docker']
+  },
   {
     when: '2026',
     role: 'Designer & Front-End Developer', org: 'Dab City Basket Teams', orgUrl: 'https://dabcitybasketteams.org/',
@@ -162,7 +186,7 @@ const STACK = [
   { title: 'Frontend', icon: 'fa-solid fa-display', items: [['Angular', 'fab fa-angular'], ['TypeScript', 'fas fa-code'], ['JavaScript', 'fab fa-js'], ['HTML5', 'fab fa-html5'], ['CSS3', 'fab fa-css3-alt'], ['Bootstrap', 'fab fa-bootstrap']] },
   { title: 'Backend', icon: 'fa-solid fa-server', items: [['Java', 'fab fa-java'], ['Spring Boot', 'fas fa-leaf'], ['Laravel', 'fab fa-laravel'], ['PHP', 'fab fa-php'], ['Node.js', 'fab fa-node-js'], ['REST APIs', 'fas fa-plug'], ['JWT Auth', 'fas fa-key']] },
   { title: 'Mobile & Data', icon: 'fa-solid fa-mobile-screen', items: [['Flutter', 'fas fa-mobile-alt'], ['Dart', 'fas fa-bullseye'], ['MySQL', 'fas fa-database'], ['PostgreSQL', 'fas fa-database'], ['SQLite', 'fas fa-database'], ['Python', 'fab fa-python'], ['C', 'fas fa-terminal']] },
-  { title: 'Tools & Delivery', icon: 'fa-solid fa-toolbox', items: [['Git & GitHub', 'fab fa-github'], ['Docker', 'fab fa-docker'], ['Postman', 'fas fa-paper-plane'], ['Vercel', 'fas fa-cloud'], ['Figma', 'fab fa-figma'], ['WordPress', 'fab fa-wordpress'], ['Shopify', 'fab fa-shopify']] }
+  { title: 'DevOps & Tools', icon: 'fa-solid fa-toolbox', items: [['Docker', 'fab fa-docker'], ['Linux (Ubuntu)', 'fab fa-linux'], ['Nginx · PHP-FPM', 'fas fa-server'], ['VPS deployment', 'fas fa-cloud-arrow-up'], ['Git & GitHub', 'fab fa-github'], ['Postman', 'fas fa-paper-plane'], ['Vercel', 'fas fa-cloud'], ['Figma', 'fab fa-figma'], ['WordPress', 'fab fa-wordpress'], ['Shopify', 'fab fa-shopify']] }
 ];
 
 /* =========================================================
@@ -198,6 +222,7 @@ function renderCases() {
         </dl>
         <ul class="case-points">${c.points.map(p => `<li>${p}</li>`).join('')}</ul>
         <div class="case-stack">${c.stack.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+        ${c.note ? `<p class="case-note"><i class="fas fa-lock"></i> ${esc(c.note)}</p>` : ''}
         <div class="case-links">
           ${c.links.map(l => `<a class="btn ${l.primary ? 'btn-primary' : 'btn-ghost'}" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} <span class="arrow-ne">→</span></a>`).join('')}
         </div>
