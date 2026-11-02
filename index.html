@@ -1,362 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Ibrahima Yinguissa Barry | Backend Developer & Data Analytics</title>
-    <meta name="description" content="Backend Developer specializing in Python, Flask, Django, RESTful APIs and Data Analytics. Transforming ideas into digital experiences.">
-    <meta name="keywords" content="backend developer, python, django, flask, data analytics, portfolio">
-    <meta name="author" content="Alpha Ibrahima Yinguissa Barry">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Alpha Ibrahima Yinguissa Barry | Backend Developer & Data Analytics">
-    <meta property="og:description" content="Backend Developer specializing in Python, Flask, Django, RESTful APIs and Data Analytics.">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Ibrahima Yinguissa Barry — Software Engineer</title>
+  <meta name="description" content="Alpha Ibrahima Yinguissa Barry — software engineering student and full-stack & mobile developer. Builder of Movely (vehicle rental platform, Guinea) and Dab City Basket Teams. Open to 2027 internships.">
+  <meta name="keywords" content="software engineer, full-stack developer, Angular, Spring Boot, Laravel, Flutter, internship 2027, Guinea, Malaysia, portfolio">
+  <meta name="author" content="Alpha Ibrahima Yinguissa Barry">
+  <meta name="theme-color" content="#0b0b0c">
+
+  <meta property="og:title" content="Alpha Ibrahima Yinguissa Barry — Software Engineer">
+  <meta property="og:description" content="Full-stack & mobile developer shipping real products in production. Open to 2027 internships.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/movely-hero.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23ff6a1a'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='%230b0b0c'>A.</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading Portfolio...</p>
-        </div>
-    </div>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-    <!-- Theme and Background Controls -->
-    <div class="control-panel">
-        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
-            <i class="fas fa-moon"></i>
-        </button>
-        <button id="bg-toggle" class="control-btn" aria-label="Change background">
-            <i class="fas fa-palette"></i>
-        </button>
-    </div>
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="logo" aria-label="Home">
+        <span class="logo-mark">A.</span>
+        <span class="logo-name">Alpha Barry</span>
+      </a>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="nav-logo">
-                <span class="logo-text">Alpha Ibrahima Yinguissa Barry</span>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a class="btn btn-sm btn-primary nav-cv" href="https://drive.google.com/file/d/1fxAkHM6PXQ_8XyqgA4l8Q_nb7lVU7AyL/view?usp=sharing" target="_blank" rel="noopener">
+          Résumé <span class="arrow-ne">→</span>
+        </a>
+        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a href="#contact" class="status-pill reveal">
+            <span class="dot"></span>
+            Open to Summer 2027 internships
+          </a>
+
+          <h1 class="hero-title reveal">
+            I build software<br>
+            that people <em>actually</em><br>
+            use<span class="accent">.</span>
+          </h1>
+
+          <p class="hero-lead reveal">
+            I'm <strong>Alpha Ibrahima Yinguissa Barry</strong>, a software engineering student and
+            full-stack &amp; mobile developer. I ship production platforms end to end: car rental
+            marketplaces, sports club websites, delivery apps and back-office systems. Most of them
+            are built for real users in Guinea.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn btn-primary">See my work <i class="fas fa-arrow-down"></i></a>
+            <a href="mailto:alphaibrahimayinguissa@gmail.com?subject=Internship%20opportunity" class="btn btn-ghost">
+              <i class="far fa-envelope"></i> alphaibrahimayinguissa@gmail.com
             </a>
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="nav-close" id="nav-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+          </div>
 
-    <main>
-        <!-- Hero Section -->
-         
-        <section id="home" class="hero section">
-          
-            <div class="hero-container container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        
-                        <span>Backend Developer & Data Analyst</span>
-                    </div>
-                    <h1 class="hero-title">Engineering Intelligent <span class="highlight">Solutions</span></h1>
-                    <h2 class="hero-subtitle">Laravel • Flutter • Springboot</h2>
-                    <p class="hero-description">I build robust backend solutions and data-driven applications that transform complex problems into efficient digital experiences.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Get In Touch
-                        </a>
-                        <a href="#projects" class="btn btn-secondary">
-                            <i class="fas fa-code"></i>
-                            View Projects
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">9+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Technologies</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <div class="floating-elements">
-                            <div class="floating-element element-1"><i class="fab fa-python"></i></div>
-                            <div class="floating-element element-2"><i class="fas fa-database"></i></div>
-                            <div class="floating-element element-3"><i class="fas fa-chart-line"></i></div>
-                            <div class="floating-element element-4"><i class="fas fa-code"></i></div>
-                        </div>
-                        <img src="images/profil.jpeg" alt="Alpha Ibrahima Yinguissa Barry" class="profile-img">
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/alpha-ibrahima-yinguissa-barry-97a234262/" aria-label="LinkedIn" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Yinguissa" aria-label="GitHub" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://twitter.com/alphaibrahima" aria-label="Twitter" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:alphaibrahimayinguissa@gmail.com?subject=Contact%20depuis%20le%20portfolio" aria-label="Email" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Transforming ideas into digital experiences</p>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3 class="about-name">Alpha Ibrahima Yinguissa Barry</h3>
-                        <div class="about-description">
-                          <p>I am a passionate software engineering student and mobile developer with strong expertise in <strong>Flutter Development, Frontend Engineering, Cybersecurity(Networking) Fundamentals,</strong> and <strong>API integration</strong>. I build clean, performant mobile apps and enjoy creating user-friendly digital experiences.</p>
-
-<p>I also have solid experience with <strong>Spring, Java, C, Bootstrap, SQL and Laravel</strong>, allowing me to work on backend logic, authentication systems, and secure architectures. </p>
- </div>
-                        <div class="about-features">
-                            <div class="feature">
-                                <i class="fas fa-server"></i>
-                                <span>Backend Development</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Web Development</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>Mobile Apps</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-cloud"></i>
-                                <span>Cloud Solutions</span>
-                            </div>
-                        </div>
-                        <div class="about-buttons">
-                            <a href="https://drive.google.com/file/d/1fxAkHM6PXQ_8XyqgA4l8Q_nb7lVU7AyL/view?usp=sharing" class="btn btn-primary" download>
-                                <i class="fas fa-download"></i>
-                                Download CV
-                            </a>
-                            <a href="#contact" class="btn btn-secondary">
-                                <i class="fas fa-comment"></i>
-                                Let's Talk
-                            </a>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <div class="image-frame">
-                            <img src="images/porte.jpeg" alt="Alpha working" class="about-img">
-                            <div class="experience-badge">
-                                <span class="exp-years">3+</span>
-                                <span class="exp-text">Years Experience</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
-            <div class="container">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with to bring ideas to life</p>
-                <div class="skills-container">
-                    <!-- Skills will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects section">
-            <div class="container">
-                <h2 class="section-title">Portfolio Showcase</h2>
-                <p class="section-subtitle">Some of my recent projects and work</p>
-                <div class="projects-filter">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="backend">Backend Apps</button>
-                    <button class="filter-btn" data-filter="api">API Development</button>
-                    <button class="filter-btn" data-filter="data">Data Analytics</button>
-                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                </div>
-                <div class="projects-grid">
-                    <!-- Projects will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together to bring your ideas to life</p>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Ready to Start Your Project?</h3>
-                        <p>I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to say hello, I'd love to hear from you!</p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Email</h4>
-                                    <p>alphaibrahimayinguissa@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Location: Malaysia</h4>
-                                    <p>Available for remote work worldwide</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Response Time</h4>
-                                    <p>Usually within 24 hours</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact-social">
-                            <a href="https://www.linkedin.com/in/alpha-ibrahima-yinguissa-barry-97a234262/" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/Yinguissa" class="social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.instagram.com/alphaibrahimyinguissa/" class="social-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdkrwpek" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                <div id="form-message" class="form-message"></div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <h3>Alpha Ibrahima Yinguissa Barry</h3>
-                    <p>Backend Developer & Community manager</p>
-                    <p class="footer-quote">Turning complex problems into elegant solutions</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/alpha-ibrahima-yinguissa-barry-97a234262/" aria-label="LinkedIn" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Yinguissa" aria-label="GitHub" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://twitter.com/alphaibrahima" aria-label="Twitter" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="mailto:alphaibrahima@example.com" aria-label="Email" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Alpha Ibrahima Yinguissa Barry. All Rights Reserved.</p>
-              
-            </div>
+          <dl class="hero-stats reveal">
+            <div><dt>2</dt><dd>Live platforms in production</dd></div>
+            <div><dt>9+</dt><dd>Projects shipped</dd></div>
+            <div><dt>3+</dt><dd>Years building</dd></div>
+          </dl>
         </div>
-    </footer>
 
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div class="modal-body">
-                <!-- Modal content will be populated by JavaScript -->
+        <div class="hero-visual reveal">
+          <div class="portrait">
+            <img src="images/profil.jpeg" alt="Portrait of Alpha Ibrahima Yinguissa Barry" width="960" height="1280">
+            <div class="portrait-tag">
+              <span class="mono">Based in</span>
+              <strong>Malaysia <span class="flag">·</span> from Guinea</strong>
             </div>
+          </div>
+          <div class="floating-card fc-1">
+            <i class="fas fa-car-side"></i>
+            <div><strong>Movely</strong><span>Live · movely.africa</span></div>
+          </div>
+          <div class="floating-card fc-2">
+            <i class="fas fa-basketball"></i>
+            <div><strong>Dab City</strong><span>Live · Angular 22</span></div>
+          </div>
         </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Angular</span><span>Spring Boot</span><span>Laravel</span><span>Flutter</span><span>REST APIs</span><span>Java</span><span>TypeScript</span><span>MySQL</span><span>PostgreSQL</span><span>Git</span><span>Figma</span><span>Vercel</span>
+          <span>Angular</span><span>Spring Boot</span><span>Laravel</span><span>Flutter</span><span>REST APIs</span><span>Java</span><span>TypeScript</span><span>MySQL</span><span>PostgreSQL</span><span>Git</span><span>Figma</span><span>Vercel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED WORK ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">01 / Featured work</span>
+          <h2 class="section-title">Real products, live in production.</h2>
+          <p class="section-sub">Two platforms I built that are online right now, used by real customers and a real community.</p>
+        </header>
+
+        <div class="cases" id="cases"><!-- populated by scripts.js --></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">02 / Experience</span>
+          <h2 class="section-title">Where I've been building.</h2>
+        </header>
+
+        <ol class="timeline" id="timeline"><!-- populated by scripts.js --></ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">03 / More projects</span>
+          <h2 class="section-title">APIs, systems &amp; experiments.</h2>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="backend">Backend &amp; APIs</button>
+          <button class="filter" data-filter="mobile">Mobile</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="ai">AI</button>
+        </div>
+
+        <div class="project-grid" id="project-grid"><!-- populated by scripts.js --></div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section section-alt" id="stack">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">04 / Toolbox</span>
+          <h2 class="section-title">What I work with.</h2>
+        </header>
+
+        <div class="stack-grid" id="stack-grid"><!-- populated by scripts.js --></div>
+
+        <div class="about-strip reveal">
+          <div class="about-col">
+            <h3>About</h3>
+            <p>
+              I care about the whole journey of a product, from the database schema and the API contract
+              to the last pixel on a phone screen. I like working in small teams that move fast and
+              ship to real users. I'm also comfortable owning a feature from first conversation to
+              deployment.
+            </p>
+            <p>
+              Outside of code I'm involved in my community in Guinea. That's where the Dab City project
+              came from: basketball brings people together in Dabola, and the club deserved a website as
+              ambitious as its players.
+            </p>
+          </div>
+          <div class="about-col">
+            <h3>Education</h3>
+            <div class="edu">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <strong>B.Sc. Software Engineering</strong>
+                <span>AIU, Malaysia</span>
+              </div>
+            </div>
+            <h3>Languages</h3>
+            <div class="langs">
+              <span>French <em>Native</em></span>
+              <span>English <em>Professional</em></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">05 / Contact</span>
+            <h2 class="contact-title">Let's build something<span class="accent">.</span></h2>
+            <p>I'm looking for a <strong>software engineering internship for 2027</strong> (backend, full-stack or mobile). Remote, hybrid or on-site. I usually reply within 24 hours.</p>
+
+            <ul class="contact-list">
+              <li><a href="mailto:alphaibrahimayinguissa@gmail.com"><i class="far fa-envelope"></i> alphaibrahimayinguissa@gmail.com</a></li>
+              <li><a href="https://www.linkedin.com/in/alpha-ibrahima-yinguissa-barry-97a234262/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+              <li><a href="https://github.com/Yinguissa" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/Yinguissa</a></li>
+              <li><span><i class="fas fa-location-dot"></i> Malaysia · open to relocate &amp; remote</span></li>
+            </ul>
+          </div>
+
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdkrwpek" method="POST">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@company.com" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about the role or project…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message <i class="fas fa-paper-plane"></i></button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Alpha Ibrahima Yinguissa Barry</span>
+      <span class="mono">Designed &amp; built by hand · HTML, CSS, JS</span>
+      <div class="footer-social">
+        <a href="https://github.com/Yinguissa" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/alpha-ibrahima-yinguissa-barry-97a234262/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/alphaibrahimyinguissa/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:alphaibrahimayinguissa@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
     </div>
+  </footer>
 
-    <!-- Background Styles -->
-    <div id="background-effects" class="background-effects"></div>
+  <!-- Project modal -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="icon-btn modal-close" id="modal-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+    <div class="modal-body" id="modal-body"></div>
+  </dialog>
 
-    <!-- JavaScript -->
-    <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,645 +1,391 @@
-// Portfolio Script for Alpha Ibrahima Yinguissa Barry
+/* =========================================================
+   Portfolio · Alpha Ibrahima Yinguissa Barry
+   All content lives in the data objects below. Edit them to
+   update the site without touching the HTML.
+   ========================================================= */
 
-// DOM Elements
-const themeToggle = document.getElementById('theme-toggle');
-const bgToggle = document.getElementById('bg-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
-const contactForm = document.getElementById('contact-form');
-const projectModal = document.getElementById('project-modal');
-const modalClose = document.querySelector('.modal-close');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const loadingScreen = document.getElementById('loading-screen');
-//const backgroundEffects = document.getElementById('background-effects');
-
-// Skills Data
-const skillsData = [
-  { name: 'Python', icon: 'fab fa-python', level: 35 },
-  { name: 'SpringBoot', icon: 'fab fa-java', level: 65 },
-  { name: 'Java', icon: 'fab fa-java', level: 80 },
-  { name: 'REST APIs', icon: 'fas fa-code', level: 85 },
-  { name: 'Laravel', icon: 'fab fa-laravel', level: 95 },
-  { name: 'Flutter', icon: 'fas fa-mobile-alt', level: 70 },
-  { name: 'Mobile Development', icon: 'fas fa-mobile', level: 92 },
-  { name: 'Git', icon: 'fab fa-git-alt', level: 90 },
-  { name: 'GitHub', icon: 'fab fa-github', level: 95 },
-  { name: 'Docker', icon: 'fab fa-docker', level: 25 },
-  { name: 'Shopify', icon: 'fab fa-shopify', level: 75 },
-  { name: 'SQL / MySQL / SQLite', icon: 'fas fa-database', level: 80 },
-  { name: 'VS Code', icon: 'fas fa-code', level: 90 },
-  { name: 'Vercel', icon: 'fas fa-cloud', level: 75 },
-  { name: 'Postman', icon: 'fas fa-paper-plane', level: 95 },
-  { name: 'Swing in Java', icon: 'fab fa-java', level: 85 },
-  { name: 'Wordpress', icon: 'fab fa-wordpress', level: 80 },
-  { name: 'HTML5', icon: 'fab fa-html5', level: 95 },
-  { name: 'CSS3', icon: 'fab fa-css3-alt', level: 90 },
-  { name: 'JavaScript', icon: 'fab fa-js-square', level: 75 },
-    { name: 'Figma', icon: 'fab fa-figma', level: 75 },
-
-
+/* ---------- 1. FEATURED CASE STUDIES ---------- */
+const CASES = [
+  {
+    name: 'Movely',
+    url: 'https://movely.africa/',
+    domain: 'movely.africa',
+    status: [{ label: 'Live', type: 'live' }, { label: 'Mobile app in progress', type: 'wip' }, { label: 'Guinea · Conakry' }],
+    tagline: 'A premium vehicle rental & sales marketplace for Guinea. Find the right car, sign a digital contract and get the keys, all online.',
+    role: 'Full-Stack Developer',
+    platform: 'Web app + REST API, mobile app in development',
+    points: [
+      'Built a <strong>two-sided marketplace</strong>: customers rent vehicles, and owners can list their own cars for rent.',
+      '<strong>Verified onboarding</strong> with identity checks, plus <strong>digital rental contracts</strong> signed in-app.',
+      'Live catalogue with category, fuel, transmission, seats, A/C, <strong>GNF pricing with promotions</strong>, and service zones (Conakry or nationwide).',
+      'Versioned, paginated <strong>REST API (v1)</strong> powering vehicles, reviews moderation, ads, site settings and visitor analytics.'
+    ],
+    stack: ['Angular 19', 'TypeScript', 'REST API', 'Spring Boot', 'SQL', 'Responsive UI'],
+    image: 'images/movely-hero.jpg',
+    mobile: 'images/movely-mobile.jpg',
+    bg: 'linear-gradient(135deg, #2741e6 0%, #0a0f1e 85%)',
+    links: [{ label: 'Visit movely.africa', href: 'https://movely.africa/', primary: true }]
+  },
+  {
+    name: 'Dab City Basket Teams',
+    url: 'https://dabcitybasketteams.org/',
+    domain: 'dabcitybasketteams.org',
+    status: [{ label: 'Live', type: 'live' }, { label: 'Dabola, Guinea' }, { label: 'FR / EN' }],
+    tagline: 'The official home of Dabola’s basketball club: roster, schedule, news, events and membership, with a bold brand to match.',
+    role: 'Designer & Front-End Developer',
+    platform: 'Bilingual single-page web app',
+    points: [
+      'Designed the <strong>full brand system</strong>: "D for Dabola", orange for energy, gold for ambition, plus documented motion and interaction states.',
+      'Built a <strong>bilingual (French / English)</strong> Angular app with team & player roster, schedule & results, news and events.',
+      '<strong>Event registration</strong> for community days (3×3 tournaments, workshops) with limited-capacity sign-ups.',
+      'Membership, partner/sponsor and newsletter flows with consent, and <strong>accessible by default</strong> (reduced-motion support, keyboard focus states).'
+    ],
+    stack: ['Angular 22', 'TypeScript', 'i18n', 'Design System', 'Figma', 'Accessibility'],
+    image: 'images/dabcity-hero.jpg',
+    mobile: 'images/dabcity-mobile.jpg',
+    bg: 'linear-gradient(135deg, #e8782f 0%, #15161a 80%)',
+    links: [{ label: 'Visit the site', href: 'https://dabcitybasketteams.org/', primary: true }]
+  }
 ];
 
-// Projects Data
-const projectsData = [
+/* ---------- 2. EXPERIENCE (edit dates/roles here) ---------- */
+const EXPERIENCE = [
   {
-    id: 1,
-    title: 'Gambian Go E-Commerce API',
-    description: 'A RESTful API for an e-commerce platform built with Laravel and Laravel REST Framework.The system supports four user roles: Buyers who shop, Sellers who manage products, Drivers who deliver orders, and Admins who oversee the entire platform. Each role has dedicated permissions to keep the e-commerce workflow organized and efficient',
+    when: '2026 — Present', current: true,
+    role: 'Full-Stack Developer', org: 'Movely', orgUrl: 'https://movely.africa/',
+    desc: 'Building a vehicle rental and sales platform for Guinea: the Angular web app, the REST API behind it, and now the mobile app.',
+    tags: ['Angular', 'REST API', 'Spring Boot', 'Mobile']
+  },
+  /* NG hosting platform: send me the link & details and I'll fill this in.
+  {
+    when: '2026', current: true,
+    role: 'Developer', org: 'NG', orgUrl: 'https://…',
+    desc: '…',
+    tags: ['Hosting', 'Cloud']
+  },
+  */
+  {
+    when: '2026',
+    role: 'Designer & Front-End Developer', org: 'Dab City Basket Teams', orgUrl: 'https://dabcitybasketteams.org/',
+    desc: 'Designed and built the club’s bilingual website and brand identity: roster, schedule, events with registration, membership and partner pages.',
+    tags: ['Angular', 'UI/UX', 'Branding', 'i18n']
+  },
+  {
+    when: '2025',
+    role: 'Flutter Developer', org: 'eCash Delivery · Guinea',
+    desc: 'Built the front end of a delivery app in Flutter and integrated the REST APIs for real-time order tracking, order management and secure user flows.',
+    tags: ['Flutter', 'Dart', 'REST API']
+  },
+  {
+    when: '2025',
+    role: 'Backend Developer', org: 'Gambian Go',
+    desc: 'Co-developed a multi-role e-commerce API (buyers, sellers, drivers, admins) with JWT auth and role-based permissions.',
+    tags: ['Laravel', 'PostgreSQL', 'JWT']
+  },
+  {
+    when: '2024 — 2025',
+    role: 'Web Developer', org: 'Service Informatique de Guinée', orgUrl: 'https://www.sinformatiqueguinee.com/',
+    desc: 'Built the company’s website presenting its services and vision, with a contact pipeline for partners and clients.',
+    tags: ['PHP', 'JavaScript', 'Bootstrap']
+  }
+];
+
+/* ---------- 3. MORE PROJECTS ---------- */
+const PROJECTS = [
+  {
+    id: 'gambiango', title: 'Gambian Go: E-Commerce API', category: 'backend', kicker: 'Backend · API',
     image: 'images/gambian.jpeg',
-    tags: ['Mobile', 'api'],
-    category: 'backend',
-    details: {
-      technologies: ['Laravel', 'Laravel REST Framework', 'PostgreSQL', 'JWT Authentication'],
-      features: ['User authentication & authorization', 'Product catalog management', 'Shopping cart functionality', 'Delivery App','Order processing'],
-      github: 'https://github.com/Yinguissa/Gambiango',
-      live: 'https://www.linkedin.com/posts/alpha-ibrahima-yinguissa-barry-97a234262_i-am-currently-collaborating-with-abdou-salam-activity-7379396502642798592-N9PX?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEB2S24B46JtUFveaSBu0DYNyxJX4wJHUd8'
-    }
+    desc: 'RESTful e-commerce API with four roles: buyers shop, sellers manage products, drivers deliver orders and admins oversee the platform. Each role has its own scoped permissions.',
+    tech: ['Laravel', 'PostgreSQL', 'JWT Auth', 'REST'],
+    features: ['Authentication & role-based authorization', 'Product catalogue management', 'Cart & order processing', 'Delivery workflow for drivers'],
+    github: 'https://github.com/Yinguissa/Gambiango',
+    live: 'https://www.linkedin.com/posts/alpha-ibrahima-yinguissa-barry-97a234262_i-am-currently-collaborating-with-abdou-salam-activity-7379396502642798592-N9PX',
+    liveLabel: 'See on LinkedIn'
   },
   {
-    id: 2,
-    title: 'Delivery App',
-    description: 'I worked on the front-end of the eCash delivery application in Guinea using Flutter, building a smooth and responsive user interface. I also integrated REST APIs to handle real-time delivery operations, order management, and secure user interactions.',
+    id: 'ecash', title: 'eCash Delivery App', category: 'mobile', kicker: 'Mobile · Flutter',
     image: 'images/ecash.jpeg',
-    tags: ['Flutter', 'Api integration'],
-    category: 'delivery',
-    details: {
-      technologies: ['Flutter', 'Dart', 'REST API', 'Provider'],
-      features: ['User authentication and profile management', 'Real-time order tracking', 'Push notifications for delivery updates', 'Secure payment integration'],
-      github: '#',
-      live: 'https://drive.google.com/file/d/1UcQ2NjOnytwfmJKR2kfP_bnlSOV98Krj/view?usp=sharing'
-    }
+    desc: 'Front end of the eCash delivery application in Guinea: a smooth, responsive Flutter UI wired to REST APIs for real-time deliveries and order management.',
+    tech: ['Flutter', 'Dart', 'Provider', 'REST'],
+    features: ['Auth & profile management', 'Real-time order tracking', 'Push notifications', 'Secure payment integration'],
+    live: 'https://drive.google.com/file/d/1UcQ2NjOnytwfmJKR2kfP_bnlSOV98Krj/view?usp=sharing',
+    liveLabel: 'Watch demo'
   },
   {
-    id: 3,
-    title: 'Money Transfer System',
-    description: 'I also built, with a teammate, a money-transfer simulation system that works with secure codes instead of real currency. When someone sends money, the system generates a unique code that the receiver can use to withdraw the amount from any agent it is a back office system.',
+    id: 'transfer', title: 'Money Transfer System', category: 'backend', kicker: 'Back-office · Fintech',
     image: 'images/money.PNG',
-    tags: [, 'Transfer'],
-    category: 'System',
-    details: {
-      technologies: ['Laravel', 'SQL', 'Postman', 'Bootstrap'],
-      features: ['Secure code generation for transactions', 'Agent management dashboard', 'Transaction history and reporting', 'User authentication and role management'],
-      github: '#',
-      live: 'https://frontend-transfert-argent.vercel.app/login'
-    }
+    desc: 'Back-office money-transfer simulation, built with a teammate: each transfer generates a unique secure code that any agent can redeem for withdrawal.',
+    tech: ['Laravel', 'SQL', 'Bootstrap', 'Postman'],
+    features: ['Secure transaction code generation', 'Agent management dashboard', 'Transaction history & reporting', 'Role-based access'],
+    live: 'https://frontend-transfert-argent.vercel.app/login'
   },
   {
-    id: 4,
-    title: 'Stock Management System',
-    description: 'We also built a web-based stock management system with an API that helps shops manage their inventory easily. The system supports multiple stores, and each store’s data is separate, so giving the system to one shop does not affect the others. It tracks stock in real time, shows low-stock alerts, and keeps sales and transaction history. This project was made to help shop owners in Guinea manage their products better.',
+    id: 'stock', title: 'Multi-Store Stock Manager', category: 'backend', kicker: 'SaaS · API',
     image: 'images/stock.PNG',
-    tags: ['backend', 'api'],
-    category: 'System',
-    details: {
-      technologies: ['Node Js', 'Postman', 'JWT', 'SQLite'],
-      features: ['Multi-store support with isolated data', 'Real-time stock tracking and alerts', 'Sales and transaction history', 'User authentication and role management'],
-      github: '#',
-      live: 'https://stock-frontend-phi.vercel.app/login'
-    }
+    desc: 'Multi-tenant inventory system for shops in Guinea. Each store’s data is isolated, and the system tracks stock in real time with low-stock alerts and sales history.',
+    tech: ['Node.js', 'SQLite', 'JWT', 'REST'],
+    features: ['Multi-store, isolated tenant data', 'Real-time stock & low-stock alerts', 'Sales & transaction history', 'Auth & roles'],
+    live: 'https://stock-frontend-phi.vercel.app/login'
   },
   {
-    id: 5,
-    title: 'Service Informatique de Guinée',
-    description: 'The site presents information about our company, our services, and our vision, and it allows people to contact us easily. It serves as a professional platform for communication and helps us connect with partners and clients.',
+    id: 'sig', title: 'Service Informatique de Guinée', category: 'web', kicker: 'Web · Company site',
     image: 'images/sig.PNG',
-    tags: [ 'Website'],
-    category: 'Website',
-    details: {
-      technologies: ['Html', 'Css', 'JavaScript', 'Bootstrap', 'PHP'],
-      features: ['Company information', 'Services overview', 'Vision and mission', 'Contact form'],
-      github: '#',
-      live: 'https://www.sinformatiqueguinee.com/'
-    }
+    desc: 'Corporate website presenting the company, its services and vision, with an easy contact flow for partners and clients.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
+    features: ['Company & services overview', 'Vision and mission', 'Contact form', 'Responsive layout'],
+    live: 'https://www.sinformatiqueguinee.com/'
   },
   {
-    id: 6,
-    title: 'Model for Heart Failure',
-    description: 'I designed a model on Bootpress for AIU Heart Failure, focused on providing detailed information about various diseases. The model is carefully structured to answer questions and educate users about health conditions, offering accurate and well-organized insights.',
-    image: 'images/aiu.PNG',
-    tags: ['Chatbot'],
-    category: 'Chatbot',
-    details: {
-      technologies: ['Botpress', 'Python'],
-      features: ['Disease information database', 'Interactive Q&A functionality', 'User-friendly interface', 'Accurate health insights'],
-      github: 'https://www.youtube.com/watch?v=QAh016aP70s',
-      live: 'https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/07/08/20250507080642-FZALUMMR.json'
-    }
-    
-  },
-  {
-    id: 7,
-    title: 'AIU BOOKING FIELDS',
-    description: 'I also developed the AIU Field Booking system, which allows students to reserve sports fields, check availability, and view upcoming events. The system provides a clear schedule, prevents double bookings, and gives students an easy way to plan and participate in campus activities.',
+    id: 'booking', title: 'AIU Field Booking', category: 'web', kicker: 'Web · Campus',
     image: 'images/book.PNG',
-    tags: ['Chatbot'],
-    category: 'Chatbot',
-    details: {
-      technologies: ['Laravel', 'bootpress', 'html', 'css'],
-      features: ['Field reservation system', 'Availability checking', 'Event scheduling', 'User-friendly booking interface'],
-      github: '#',
-      live: 'https://www.linkedin.com/posts/alpha-ibrahima-yinguissa-barry-97a234262_laravel-booking-activity-7360162368674304004-qdMv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEB2S24B46JtUFveaSBu0DYNyxJX4wJHUd8'
-    }
-    
-  }
-
-];
-
-// Background Styles
-const backgroundStyles = [
-  {
-    name: 'Gradient Blue',
-    style: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    desc: 'Lets AIU students reserve sports fields, check live availability and see upcoming events, with double-booking prevention built in.',
+    tech: ['Laravel', 'Botpress', 'HTML', 'CSS'],
+    features: ['Field reservations', 'Availability checking', 'No double bookings', 'Event schedule'],
+    live: 'https://www.linkedin.com/posts/alpha-ibrahima-yinguissa-barry-97a234262_laravel-booking-activity-7360162368674304004-qdMv',
+    liveLabel: 'See on LinkedIn'
   },
   {
-    name: 'Gradient Sunset',
-    style: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
-  },
-  {
-    name: 'Gradient Ocean',
-    style: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-  },
-  {
-    name: 'Gradient Forest',
-    style: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
-  },
-  {
-    name: 'Animated Particles',
-    style: 'particles'
+    id: 'heart', title: 'AIU Heart-Failure Assistant', category: 'ai', kicker: 'AI · Chatbot',
+    image: 'images/aiu.PNG',
+    desc: 'Conversational health assistant built on Botpress that answers questions about heart failure and related conditions with structured, well-organised information.',
+    tech: ['Botpress', 'Python', 'NLP'],
+    features: ['Disease knowledge base', 'Interactive Q&A', 'Friendly chat UI', 'Structured health insights'],
+    live: 'https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/07/08/20250507080642-FZALUMMR.json',
+    liveLabel: 'Try the bot',
+    video: 'https://www.youtube.com/watch?v=QAh016aP70s'
   }
 ];
 
-let currentBgIndex = 0;
+/* ---------- 4. STACK ---------- */
+const STACK = [
+  { title: 'Frontend', icon: 'fa-solid fa-display', items: [['Angular', 'fab fa-angular'], ['TypeScript', 'fas fa-code'], ['JavaScript', 'fab fa-js'], ['HTML5', 'fab fa-html5'], ['CSS3', 'fab fa-css3-alt'], ['Bootstrap', 'fab fa-bootstrap']] },
+  { title: 'Backend', icon: 'fa-solid fa-server', items: [['Java', 'fab fa-java'], ['Spring Boot', 'fas fa-leaf'], ['Laravel', 'fab fa-laravel'], ['PHP', 'fab fa-php'], ['Node.js', 'fab fa-node-js'], ['REST APIs', 'fas fa-plug'], ['JWT Auth', 'fas fa-key']] },
+  { title: 'Mobile & Data', icon: 'fa-solid fa-mobile-screen', items: [['Flutter', 'fas fa-mobile-alt'], ['Dart', 'fas fa-bullseye'], ['MySQL', 'fas fa-database'], ['PostgreSQL', 'fas fa-database'], ['SQLite', 'fas fa-database'], ['Python', 'fab fa-python'], ['C', 'fas fa-terminal']] },
+  { title: 'Tools & Delivery', icon: 'fa-solid fa-toolbox', items: [['Git & GitHub', 'fab fa-github'], ['Docker', 'fab fa-docker'], ['Postman', 'fas fa-paper-plane'], ['Vercel', 'fas fa-cloud'], ['Figma', 'fab fa-figma'], ['WordPress', 'fab fa-wordpress'], ['Shopify', 'fab fa-shopify']] }
+];
 
-// Initialize the portfolio
-document.addEventListener('DOMContentLoaded', function() {
-  initializeApp();
-});
+/* =========================================================
+   RENDERING
+   ========================================================= */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = (s = '') => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-function initializeApp() {
-  initializeLoading();
-  initializeTheme();
-  initializeNavigation();
-  initializeSkills();
-  initializeProjects();
-  initializeBackgroundToggle();
-  initializeProjectFilters();
-  initializeContactForm();
-  initializeProjectModal();
-  initializeScrollAnimations();
-  initializeHeaderScroll();
+function renderCases() {
+  $('#cases').innerHTML = CASES.map(c => `
+    <article class="case reveal" style="--case-bg:${c.bg}">
+      <div class="case-media">
+       <div class="devices">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i>
+            <span class="browser-url"><span class="fas fa-lock"></span>${esc(c.domain)}</span>
+          </div>
+          <img src="${c.image}" alt="${esc(c.name)} homepage, desktop" loading="lazy" width="800" height="500">
+        </div>
+        ${c.mobile ? `<div class="phone"><img src="${c.mobile}" alt="${esc(c.name)} on mobile" loading="lazy" width="375" height="812"></div>` : ''}
+       </div>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          ${c.status.map(s => `<span class="chip ${s.type ? 'chip-' + s.type : ''}">${esc(s.label)}</span>`).join('')}
+        </div>
+        <h3 class="case-title">${esc(c.name)}</h3>
+        <p class="case-tagline">${esc(c.tagline)}</p>
+        <dl class="case-role">
+          <dt>Role</dt><dd>${esc(c.role)}</dd>
+          <dt>Product</dt><dd>${esc(c.platform)}</dd>
+        </dl>
+        <ul class="case-points">${c.points.map(p => `<li>${p}</li>`).join('')}</ul>
+        <div class="case-stack">${c.stack.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+        <div class="case-links">
+          ${c.links.map(l => `<a class="btn ${l.primary ? 'btn-primary' : 'btn-ghost'}" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} <span class="arrow-ne">→</span></a>`).join('')}
+        </div>
+      </div>
+    </article>`).join('');
 }
 
-// Loading Screen
-function initializeLoading() {
-  // Simulate loading time
-  setTimeout(() => {
-    loadingScreen.classList.add('fade-out');
-    setTimeout(() => {
-      loadingScreen.style.display = 'none';
-    }, 500);
-  }, 1500);
+function renderTimeline() {
+  $('#timeline').innerHTML = EXPERIENCE.map(e => `
+    <li class="tl-item reveal">
+      <div class="tl-when">${e.current ? `<span class="now">${esc(e.when)}</span>` : esc(e.when)}</div>
+      <div>
+        <div class="tl-head">
+          <span class="tl-role">${esc(e.role)}</span>
+          <span class="tl-org">${e.orgUrl ? `<a href="${e.orgUrl}" target="_blank" rel="noopener">@ ${esc(e.org)}</a>` : '@ ' + esc(e.org)}</span>
+        </div>
+        <p class="tl-desc">${esc(e.desc)}</p>
+        <div class="tl-tags">${e.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+      </div>
+    </li>`).join('');
 }
 
-// Theme Management
-function initializeTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeToggleIcon(savedTheme);
-  
-  themeToggle.addEventListener('click', toggleTheme);
+function renderProjects() {
+  $('#project-grid').innerHTML = PROJECTS.map(p => `
+    <button class="project reveal" data-category="${p.category}" data-id="${p.id}" aria-haspopup="dialog">
+      <div class="project-thumb"><img src="${p.image}" alt="" loading="lazy"></div>
+      <div class="project-body">
+        <span class="project-kicker">${esc(p.kicker)}</span>
+        <h3 class="project-title">${esc(p.title)}</h3>
+        <p class="project-desc">${esc(p.desc)}</p>
+        <div class="project-foot">
+          <span class="project-tech">${p.tech.slice(0, 3).map(esc).join(' · ')}</span>
+          <span class="project-more">Details <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </button>`).join('');
+
+  $$('.project').forEach(card => card.addEventListener('click', () => openModal(card.dataset.id)));
 }
 
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateThemeToggleIcon(newTheme);
+function renderStack() {
+  $('#stack-grid').innerHTML = STACK.map(g => `
+    <div class="stack-col reveal">
+      <h3><i class="${g.icon}"></i>${esc(g.title)}</h3>
+      <ul>${g.items.map(([n, i]) => `<li><i class="${i}"></i>${esc(n)}</li>`).join('')}</ul>
+    </div>`).join('');
 }
 
-function updateThemeToggleIcon(theme) {
-  const icon = themeToggle.querySelector('i');
-  icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+/* ---------- Filters ---------- */
+function initFilters() {
+  $$('.filter').forEach(btn => btn.addEventListener('click', () => {
+    $$('.filter').forEach(b => b.classList.toggle('active', b === btn));
+    const f = btn.dataset.filter;
+    $$('.project').forEach(card => card.classList.toggle('is-hidden', f !== 'all' && card.dataset.category !== f));
+  }));
 }
 
-// Background Toggle
-function initializeBackgroundToggle() {
-  bgToggle.addEventListener('click', toggleBackground);
-}
+/* ---------- Modal ---------- */
+const modal = $('#modal');
+function openModal(id) {
+  const p = PROJECTS.find(x => x.id === id);
+  if (!p) return;
+  const links = [
+    p.live && `<a class="btn btn-primary" href="${p.live}" target="_blank" rel="noopener">${esc(p.liveLabel || 'Live demo')} <span class="arrow-ne">→</span></a>`,
+    p.github && `<a class="btn btn-ghost" href="${p.github}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source code</a>`,
+    p.video && `<a class="btn btn-ghost" href="${p.video}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Video</a>`
+  ].filter(Boolean).join('');
 
-function toggleBackground() {
-  currentBgIndex = (currentBgIndex + 1) % backgroundStyles.length;
-  const bgStyle = backgroundStyles[currentBgIndex];
-  
-  if (bgStyle.style === 'particles') {
-    createParticlesBackground();
-  } else {
-    removeParticlesBackground();
-    document.documentElement.style.setProperty('--bg-gradient', bgStyle.style);
-  }
-  
-  // Show background name tooltip
-  showBackgroundTooltip(bgStyle.name);
+  $('#modal-body').innerHTML = `
+    <div class="modal-hero"><img src="${p.image}" alt="${esc(p.title)} screenshot"></div>
+    <div class="modal-content">
+      <span class="eyebrow">${esc(p.kicker)}</span>
+      <h2 id="modal-title">${esc(p.title)}</h2>
+      <p>${esc(p.desc)}</p>
+      <div class="modal-cols">
+        <div><h4>Built with</h4><ul>${p.tech.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>
+        <div><h4>Key features</h4><ul>${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>
+      </div>
+      <div class="modal-links">${links}</div>
+    </div>`;
+  if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
 }
+$('#modal-close').addEventListener('click', () => modal.close());
+modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
 
-function createParticlesBackground() {
-  backgroundEffects.innerHTML = '';
-  backgroundEffects.style.opacity = '0.3';
-  
-  for (let i = 0; i < 50; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.cssText = `
-      position: absolute;
-      width: ${Math.random() * 6 + 2}px;
-      height: ${Math.random() * 6 + 2}px;
-      background: var(--accent-primary);
-      border-radius: 50%;
-      top: ${Math.random() * 100}%;
-      left: ${Math.random() * 100}%;
-      animation: floatParticle ${Math.random() * 20 + 10}s linear infinite;
-      animation-delay: ${Math.random() * 5}s;
-    `;
-    backgroundEffects.appendChild(particle);
-  }
-  
-  // Add animation keyframes
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes floatParticle {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-function removeParticlesBackground() {
-  backgroundEffects.innerHTML = '';
-  backgroundEffects.style.opacity = '0.1';
-}
-
-function showBackgroundTooltip(name) {
-  const tooltip = document.createElement('div');
-  tooltip.textContent = `Background: ${name}`;
-  tooltip.style.cssText = `
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    background: var(--accent-primary);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    font-size: 0.9rem;
-    z-index: 1000;
-    box-shadow: var(--shadow-lg);
-  `;
-  document.body.appendChild(tooltip);
-  
-  setTimeout(() => {
-    tooltip.remove();
-  }, 2000);
-}
-
-// Navigation
-function initializeNavigation() {
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.add('active');
-    document.body.style.overflow = 'hidden';
+/* ---------- Theme ---------- */
+function initTheme() {
+  const btn = $('#theme-toggle');
+  const sync = () => {
+    const t = document.documentElement.getAttribute('data-theme');
+    btn.querySelector('i').className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', t === 'dark' ? '#0b0b0c' : '#f6f5f1');
+  };
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
   });
-  
-  navClose.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-  
-  // Close mobile menu when clicking on a link
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  });
+  sync();
 }
 
-// Header Scroll Effect
-function initializeHeaderScroll() {
-  let lastScrollY = window.scrollY;
-  
+/* ---------- Navigation ---------- */
+function initNav() {
+  const header = $('#header'), links = $('#nav-links'), toggle = $('#nav-toggle');
+  let lastY = 0;
   window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-      header.style.background = 'rgba(255, 255, 255, 0.95)';
-      if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-      }
-      header.style.backdropFilter = 'blur(20px)';
-    } else {
-      header.style.background = 'rgba(255, 255, 255, 0.95)';
-      if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-      }
-      header.style.backdropFilter = 'blur(20px)';
-    }
-    
-    // Hide header on scroll down, show on scroll up
-    if (window.scrollY > lastScrollY && window.scrollY > 100) {
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      header.style.transform = 'translateY(0)';
-    }
-    
-    lastScrollY = window.scrollY;
-  });
-}
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 20);
+    header.classList.toggle('hidden', y > lastY && y > 400 && !links.classList.contains('open'));
+    lastY = y;
+  }, { passive: true });
 
-// Skills Section
-function initializeSkills() {
-  const skillsContainer = document.querySelector('.skills-container');
-  
-  skillsData.forEach((skill, index) => {
-    const skillCard = document.createElement('div');
-    skillCard.className = 'skill-card fade-in';
-    
-    skillCard.innerHTML = `
-      <div class="skill-icon">
-        <i class="${skill.icon}"></i>
-      </div>
-      <h3 class="skill-name">${skill.name}</h3>
-      <div class="skill-level">
-        <div class="skill-progress" data-level="${skill.level}"></div>
-      </div>
-    `;
-    
-    skillsContainer.appendChild(skillCard);
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.querySelector('i').className = open ? 'fas fa-xmark' : 'fas fa-bars';
   });
-  
-  // Animate skill progress bars when they come into view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const progressBar = entry.target.querySelector('.skill-progress');
-        const level = progressBar.getAttribute('data-level');
-        setTimeout(() => {
-          progressBar.style.transform = `scaleX(${level / 100})`;
-        }, 200);
-        observer.unobserve(entry.target);
-      }
+  $$('a', links).forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.querySelector('i').className = 'fas fa-bars';
+  }));
+
+  // Active section highlight
+  const sections = $$('main section[id]');
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) $$('a', links).forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
     });
-  }, { threshold: 0.3 });
-  
-  document.querySelectorAll('.skill-card').forEach(card => {
-    observer.observe(card);
-  });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => spy.observe(s));
 }
 
-// Projects Section
-function initializeProjects() {
-  const projectsGrid = document.querySelector('.projects-grid');
-  
-  projectsData.forEach(project => {
-    const projectCard = document.createElement('div');
-    projectCard.className = `project-card fade-in ${project.category}`;
-    projectCard.setAttribute('data-category', project.category);
-    
-    projectCard.innerHTML = `
-      <div class="project-image">
-        <img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-description">${project.description}</p>
-        <div class="project-tags">
-          ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-        </div>
-        <a href="#" class="project-link" data-project-id="${project.id}">
-          View Details <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    `;
-    
-    projectsGrid.appendChild(projectCard);
-  });
-  
-  // Add event listeners to project links
-  document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const projectId = parseInt(link.getAttribute('data-project-id'));
-      openProjectModal(projectId);
-    });
-  });
+/* ---------- Reveal on scroll ---------- */
+function initReveal() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  $$('.reveal').forEach(el => io.observe(el));
 }
 
-function initializeProjectFilters() {
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
-      btn.classList.add('active');
-      
-      const filter = btn.getAttribute('data-filter');
-      filterProjects(filter);
-    });
-  });
+/* ---------- Cursor glow ---------- */
+function initGlow() {
+  const glow = $('.cursor-glow');
+  if (!glow || matchMedia('(hover: none)').matches) return;
+  let x = innerWidth * .7, y = innerHeight * .2, tx = x, ty = y;
+  addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+  (function loop() {
+    x += (tx - x) * .08; y += (ty - y) * .08;
+    glow.style.left = x + 'px'; glow.style.top = y + 'px';
+    requestAnimationFrame(loop);
+  })();
 }
 
-function filterProjects(filter) {
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  projectCards.forEach(card => {
-    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-      card.style.display = 'block';
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 100);
-    } else {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        card.style.display = 'none';
-      }, 300);
-    }
-  });
-}
-
-// Contact Form
-// Contact Form - FIXED VERSION
-function initializeContactForm() {
-  contactForm.addEventListener('submit', async function(e) {
+/* ---------- Contact form (Formspree) ---------- */
+function initForm() {
+  const form = $('#contact-form'), status = $('#form-status');
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
+    const btn = $('button[type="submit"]', form), label = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = 'Sending… <i class="fas fa-circle-notch fa-spin"></i>';
+    status.className = 'form-status'; status.textContent = '';
     try {
-      // Get form data
-      const formData = new FormData(this);
-      
-      // Send to Formspree
-      const response = await fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        // Success - show message and reset form
-        showMessage('Message sent successfully! I will get back to you soon.', 'success');
-        contactForm.reset();
-      } else {
-        // Error from Formspree
-        const errorData = await response.json();
-        showMessage('Sorry, there was an error sending your message. Please try again or email me directly.', 'error');
-        console.error('Formspree error:', errorData);
-      }
-    } catch (error) {
-      // Network error
-      showMessage('Network error. Please check your connection and try again.', 'error');
-      console.error('Network error:', error);
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('bad response');
+      status.textContent = 'Thanks! Your message is on its way. I’ll reply within 24 hours.';
+      status.classList.add('ok');
+      form.reset();
+    } catch {
+      status.textContent = 'Something went wrong. Please email me directly at alphaibrahimayinguissa@gmail.com.';
+      status.classList.add('err');
     } finally {
-      // Reset button state
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-    }
-  });
-}
-function showMessage(text, type) {
-  const messageEl = document.getElementById('form-message');
-  messageEl.textContent = text;
-  messageEl.className = `form-message ${type}`;
-  messageEl.style.display = 'block';
-  
-  // Hide message after 5 seconds
-  setTimeout(() => {
-    messageEl.style.display = 'none';
-  }, 5000);
-}
-
-// Project Modal
-function initializeProjectModal() {
-  modalClose.addEventListener('click', () => {
-    projectModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  
-  window.addEventListener('click', (e) => {
-    if (e.target === projectModal) {
-      projectModal.style.display = 'none';
-      document.body.style.overflow = '';
+      btn.disabled = false; btn.innerHTML = label;
     }
   });
 }
 
-function openProjectModal(projectId) {
-  const project = projectsData.find(p => p.id === projectId);
-  
-  if (project) {
-    const modalBody = document.querySelector('.modal-body');
-    
-    modalBody.innerHTML = `
-      <h2>${project.title}</h2>
-      <div class="project-modal-image">
-        <img src="${project.image}" alt="${project.title}" loading="lazy" style="width: 100%; border-radius: var(--border-radius); margin: 1rem 0;">
-      </div>
-      <p class="project-modal-description" style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">${project.description}</p>
-      
-      <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-        <div class="project-technologies">
-          <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Technologies Used</h3>
-          <ul style="list-style: none; padding: 0;">
-            ${project.details.technologies.map(tech => `<li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">• ${tech}</li>`).join('')}
-          </ul>
-        </div>
-        
-        <div class="project-features">
-          <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Key Features</h3>
-          <ul style="list-style: none; padding: 0;">
-            ${project.details.features.map(feature => `<li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">• ${feature}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-      
-      <div class="project-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        ${project.details.github ? `<a href="${project.details.github}" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>` : ''}
-        ${project.details.live ? `<a href="${project.details.live}" target="_blank" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
-      </div>
-    `;
-    
-    projectModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-// Scroll Animations
-function initializeScrollAnimations() {
-  const fadeElements = document.querySelectorAll('.fade-in');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  fadeElements.forEach(element => {
-    observer.observe(element);
-  });
-}
-
-// Add some interactive effects
-document.addEventListener('mousemove', (e) => {
-  const cursor = document.createElement('div');
-  cursor.style.cssText = `
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--accent-primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    left: ${e.clientX - 10}px;
-    top: ${e.clientY - 10}px;
-    transition: all 0.1s ease;
-    opacity: 0.5;
-  `;
-  document.body.appendChild(cursor);
-  
-  setTimeout(() => {
-    cursor.remove();
-  }, 100);
+/* ---------- Boot ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  renderCases();
+  renderTimeline();
+  renderProjects();
+  renderStack();
+  initFilters();
+  initTheme();
+  initNav();
+  initGlow();
+  initForm();
+  initReveal();
+  $('#year').textContent = new Date().getFullYear();
 });
-
-// Export functions for global access
-window.portfolio = {
-  setGradientBackground: (gradient) => {
-    document.documentElement.style.setProperty('--bg-gradient', gradient);
-  },
-  setImageBackground: (imageUrl) => {
-    document.documentElement.style.setProperty('--bg-pattern', `url(${imageUrl})`);
-  }
-};
