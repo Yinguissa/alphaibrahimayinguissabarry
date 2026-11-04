@@ -210,9 +210,9 @@ const PROJECTS = [
 
 /* ---------- 4. STACK ---------- */
 const STACK = [
-  { title: 'Frontend', icon: 'fa-solid fa-display', items: [['Angular', 'fab fa-angular'], ['TypeScript', 'fas fa-code'], ['JavaScript', 'fab fa-js'], ['HTML5', 'fab fa-html5'], ['CSS3', 'fab fa-css3-alt'], ['Bootstrap', 'fab fa-bootstrap']] },
-  { title: 'Backend', icon: 'fa-solid fa-server', items: [['Java', 'fab fa-java'], ['Spring Boot', 'fas fa-leaf'], ['Laravel', 'fab fa-laravel'], ['PHP', 'fab fa-php'], ['Node.js', 'fab fa-node-js'], ['REST APIs', 'fas fa-plug'], ['JWT Auth', 'fas fa-key']] },
-  { title: 'Mobile & Data', icon: 'fa-solid fa-mobile-screen', items: [['Flutter', 'fas fa-mobile-alt'], ['Dart', 'fas fa-bullseye'], ['MySQL', 'fas fa-database'], ['PostgreSQL', 'fas fa-database'], ['SQLite', 'fas fa-database'], ['Python', 'fab fa-python'], ['C', 'fas fa-terminal']] },
+  { title: 'Frontend & Mobile', icon: 'fa-solid fa-display', items: [['Angular', 'fab fa-angular'], ['TypeScript', 'fas fa-code'], ['JavaScript', 'fab fa-js'], ['HTML5', 'fab fa-html5'], ['CSS3', 'fab fa-css3-alt'], ['Bootstrap', 'fab fa-bootstrap'], ['Flutter', 'fas fa-mobile-alt'], ['Dart', 'fas fa-bullseye']] },
+  { title: 'Backend & Databases', icon: 'fa-solid fa-server', items: [['Java', 'fab fa-java'], ['Spring Boot', 'fas fa-leaf'], ['Laravel', 'fab fa-laravel'], ['PHP', 'fab fa-php'], ['Node.js', 'fab fa-node-js'], ['REST APIs', 'fas fa-plug'], ['JWT Auth', 'fas fa-key'], ['MySQL', 'fas fa-database'], ['PostgreSQL', 'fas fa-database'], ['SQLite', 'fas fa-database'], ['C', 'fas fa-terminal']] },
+  { title: 'Data & AI', icon: 'fa-solid fa-chart-line', items: [['Python', 'fab fa-python'], ['pandas · NumPy', 'fas fa-table'], ['Machine learning', 'fas fa-brain'], ['SQL analysis', 'fas fa-database'], ['Dashboards & BI', 'fas fa-chart-pie'], ['NLP chatbots', 'fas fa-robot']] },
   { title: 'DevOps & Tools', icon: 'fa-solid fa-toolbox', items: [['Docker', 'fab fa-docker'], ['Linux (Ubuntu)', 'fab fa-linux'], ['Nginx · PHP-FPM', 'fas fa-server'], ['VPS deployment', 'fas fa-cloud-arrow-up'], ['Git & GitHub', 'fab fa-github'], ['Postman', 'fas fa-paper-plane'], ['Vercel', 'fas fa-cloud'], ['Figma', 'fab fa-figma'], ['WordPress', 'fab fa-wordpress'], ['Shopify', 'fab fa-shopify']] }
 ];
 
